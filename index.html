@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/output.css">
+    <link rel="stylesheet" href="./src/css/input.css">
+</head>
+<body class="bg-black">
+    <section class=" flex flex-col justify-center items-center h-screen">
+        <div class=" bg-red-500 box"></div>
+        <div class="line1"></div>
+        <div class=" bg-blue-500 boxone"></div>
+        <div class="line2"></div>
+        <div class=" bg-green-500 boxthree"></div>
+        <div class="line3"></div>
+        <p class=" text-white redtext text-3xl">Hello.</p>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/TextPlugin.min.js"></script>
+    <script>
+        var tl = gsap.timeline({repeat: 0, repeatDelay: 1});
+        tl.from(".box" ,{
+        duration:2,
+        scale:1,
+        backgroundColor: "blue", 
+        rotation: 90,
+        x:50,
+        delay:1,
+        autoAlpha: 0,
+         }, );
+
+        tl.to(".line1" ,{
+            duration:2,
+            height:100,
+            backgroundColor: "white", 
+            width:2,
+        },);
+
+        tl.from(".boxone" ,{
+        duration:2,
+        backgroundColor: "white", 
+        xPercent: 50,
+        skew: 30,
+        y:-100,
+        autoAlpha: 0,
+    },);
+
+        tl.to(".line2" ,{
+            duration:2,
+            height:100,
+            backgroundColor: "white", 
+            width:2,
+        },);
+
+        tl.from(".boxthree" ,{
+        duration:2,
+        backgroundColor: "pink", 
+        xPercent: -50,
+        skew: 30,
+        y:-100,
+         autoAlpha: 0,
+       },);
+
+        tl.to(".line3" ,{
+            duration:2,
+            height:100,
+            backgroundColor: "white", 
+            width:2,
+        },);
+
+        tl.from(".redtext", {
+            duration: 2,
+            text: "",
+            ease: "none",
+            color:"red",
+            },);
+    </script>
+</body>
+</html>
